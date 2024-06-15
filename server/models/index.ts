@@ -1,10 +1,10 @@
-const mongoose = require('mongoose');
-const {dbName,connectionString} = require('../config.js')
+import { connect } from 'mongoose';
+import { dbName, connectionString } from '../config.ts';
 
 
 async function connectDB() {
   try {
-    await mongoose.connect(`${connectionString}/${dbName}`);
+    await connect(`${connectionString}/${dbName}`);
     console.log('Connected to MongoDB');
   } catch (error) {
     console.log(`Error connecting to MongoDB', ${error}`);
