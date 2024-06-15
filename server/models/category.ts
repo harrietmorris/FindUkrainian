@@ -1,6 +1,9 @@
-const mongoose = require('mongoose');
+// const mongoose = require('mongoose');
+import { model, Schema } from 'mongoose';
+import { ICategoryType } from '../Types/Types';
 
-const categorySchema = new mongoose.Schema({
+
+const categorySchema: Schema = new Schema<ICategoryType>({
   name: {
     en: {
       type: String,
@@ -23,6 +26,6 @@ const categorySchema = new mongoose.Schema({
   },
 });
 
-const Category = mongoose.model('Category', categorySchema);
+const Category = model<ICategoryType>('Category', categorySchema);
 
 module.exports = Category;
