@@ -1,27 +1,8 @@
 // const mongoose = require('mongoose');
 import { model, Schema } from 'mongoose';
-
+import { IBusinessType } from '../Types/Types';
 //FixMe: review 'require' for all if pulling data from API (not mock)
 //Resolution: No specified API to fetch from. Deciding to leave schema as is.
-interface IBusinessType {
-  _id: string;
-  name: string;
-  address: string;
-  category: string;
-  description: string;
-  longDescription: string;
-  website: string;
-  openingHours: {
-    [key: string]: OpenCloseHours;
-  };
-  contactInfo: string;
-  coordinates: { lat: number; lng: number };
-  images: [string];
-}
-
-interface OpenCloseHours {
-  [key: string]: number;
-}
 
 //FixMe: review openingHours type (Number) -> (String)
 //Resolution: Mock data is still hard coded. 

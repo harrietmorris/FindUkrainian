@@ -1,16 +1,7 @@
 // const mongoose = require('mongoose');
 import { model, Schema } from 'mongoose';
+import { ICategoryType } from '../Types/Types';
 
-interface ICategoryType {
-  name: {
-    en: string;
-    uk: string;
-  };
-  description: {
-    en: string;
-    uk: string;
-  };
-}
 
 const categorySchema: Schema = new Schema<ICategoryType>({
   name: {
