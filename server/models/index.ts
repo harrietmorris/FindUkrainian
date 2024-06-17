@@ -2,7 +2,7 @@ import { connect } from 'mongoose';
 import { dbName, connectionString } from '../config.ts';
 
 
-async function connectDB() {
+export async function connectDB() {
   try {
     await connect(`${connectionString}/${dbName}`);
     console.log('Connected to MongoDB');

@@ -4,7 +4,7 @@
 import { connectionString, dbName } from '../config.ts';
 import mongoose from 'mongoose';
 import Business from '../models/business.ts';
-import Categories from '../models/categories.ts';
+import Categories from '../models/category.ts';
 import {seedData} from './seedBusinesses.ts';
 import {seedCategories} from './seedCategories.ts';
 

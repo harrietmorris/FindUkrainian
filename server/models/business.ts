@@ -53,4 +53,4 @@ const businessSchema: Schema = new Schema<IBusinessType>({
 
 const Business = model<IBusinessType>('Business', businessSchema);
 
-module.exports = Business;
+export default Business;
