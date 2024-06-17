@@ -1,4 +1,4 @@
-const seedData = [
+export const seedData = [
   {
     openingHours: {
       Monday: {

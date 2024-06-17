@@ -1,13 +1,12 @@
 // seed.js
 
 
-const { connectionString, dbName } = require('../config.js');
-
-const mongoose = require('mongoose');
-const Business = require('../models/business.js');
-const Categories = require('../models/categories.js');
-const seedData = require('./seedBusinesses.js');
-const seedCategories = require('./seedCategories.js');
+import { connectionString, dbName } from '../config.ts';
+import mongoose from 'mongoose';
+import Business from '../models/business.ts';
+import Categories from '../models/categories.ts';
+import {seedData} from './seedBusinesses.ts';
+import {seedCategories} from './seedCategories.ts';
 
 
 //FIXME: do we need to remove the console logs here -> if its only use for dev?
@@ -40,4 +39,3 @@ const seedDB = (async () => {
   }
 })()
 
-// seedDB(); //TODO: make an iife
