@@ -434,4 +434,4 @@ export const seedData = [
   },
 ];
 
-module.exports = seedData;
+export default seedData;

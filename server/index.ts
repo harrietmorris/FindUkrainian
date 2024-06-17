@@ -22,3 +22,5 @@ app.use((_req: Request, res: Response) => {
   await connectDB();
   app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
 })();
+
+export default app
