@@ -1,8 +1,9 @@
-const Business = require("./models/business");
-const Category = require("./models/category");
 
-exports.getAllMiddleware = (modelName) => {
-  return async (_req, res) => {
+import { Request, Response } from "express";
+
+
+exports.getAllMiddleware = (modelName: { find: () => any; }) => {
+  return async (_req: Request, res: Response) => {
     try {
       const result = await modelName.find();
       res.status(200).json(result);
@@ -12,8 +13,8 @@ exports.getAllMiddleware = (modelName) => {
   };
 };
 
-exports.getByIdMiddleware = (modelName) => {
-  return async (req, res) => {
+exports.getByIdMiddleware = (modelName: { findById: (arg0: any) => any; }) => {
+  return async (req: Request, res: Response) => {
     try {
       const result = await modelName.findById(req.params.id);
       if (!result) {
