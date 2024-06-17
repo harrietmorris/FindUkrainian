@@ -3,7 +3,7 @@ import { Request, Response } from "express";
 import cors from "cors";
 import router from "./router";
 import dotenv from "dotenv";
-import { PORT } from './config.js'
+import { PORT } from './config'
 import { connectDB } from "./models/index";
 
 dotenv.config();
