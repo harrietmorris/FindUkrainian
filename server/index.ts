@@ -1,10 +1,10 @@
 import express from "express";
 import { Request, Response } from "express";
 import cors from "cors";
-import router from "./router.js";
+import router from "./router";
 import dotenv from "dotenv";
 import { PORT } from './config.js'
-import { connectDB } from "./models/index.ts";
+import { connectDB } from "./models/index";
 
 dotenv.config();
 

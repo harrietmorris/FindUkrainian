@@ -2,18 +2,18 @@
 import { Request, Response } from "express";
 
 
-exports.getAllMiddleware = (modelName: { find: () => any; }) => {
+export const getAllMiddleware = (modelName: { find: () => any; }) => {
   return async (_req: Request, res: Response) => {
     try {
       const result = await modelName.find();
       res.status(200).json(result);
     } catch (error) {
-      res.status(500).json({ message: error.message });
+      res.status(500).json({ message: (error as Error).message });
     }
   };
 };
 
-exports.getByIdMiddleware = (modelName: { findById: (arg0: any) => any; }) => {
+export const getByIdMiddleware = (modelName: { findById: (arg0: string) => any; }) => {
   return async (req: Request, res: Response) => {
     try {
       const result = await modelName.findById(req.params.id);
@@ -22,7 +22,7 @@ exports.getByIdMiddleware = (modelName: { findById: (arg0: any) => any; }) => {
       }
       res.status(200).json(result);
     } catch (error) {
-      res.status(500).json({ message: error.message });
+      res.status(500).json({ message: (error as Error).message });
     }
   }
 };

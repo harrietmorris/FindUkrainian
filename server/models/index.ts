@@ -1,5 +1,5 @@
 import { connect } from 'mongoose';
-import { dbName, connectionString } from '../config.ts';
+import { dbName, connectionString } from '../config';
 
 
 export async function connectDB() {
