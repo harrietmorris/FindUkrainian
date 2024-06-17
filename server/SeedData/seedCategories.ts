@@ -1,4 +1,4 @@
-const seedCategories = [
+export const seedCategories = [
   {
     name: {
       en: 'all',
@@ -51,4 +51,4 @@ const seedCategories = [
   },
 ];
 
-module.exports = seedCategories;
+

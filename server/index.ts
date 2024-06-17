@@ -4,7 +4,7 @@ import cors from "cors";
 import router from "./router.js";
 import dotenv from "dotenv";
 import { PORT } from './config.js'
-import { connectDB } from "./models/index.js";
+import { connectDB } from "./models/index.ts";
 
 dotenv.config();
 
