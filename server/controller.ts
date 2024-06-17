@@ -16,6 +16,7 @@ export const getAllMiddleware = (modelName: { find: () => any; }) => {
 export const getByIdMiddleware = (modelName: { findById: (arg0: string) => any; }) => {
   return async (req: Request, res: Response) => {
     try {
+      console.log('controler', req.params.id)
       const result = await modelName.findById(req.params.id);
       if (!result) {
         return res.status(404).json({ message: "Result not found" });
