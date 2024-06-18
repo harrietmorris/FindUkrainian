@@ -11,7 +11,7 @@ export interface BusinessType {
   };
   contactInfo: string;
   coordinates: { lat: number; lng: number };
-  images: [string];
+  images: string[];
 }
 
 interface OpenCloseHours {
