@@ -19,4 +19,5 @@ const mockBusinessDb = async () => {
 
 export default mockBusinessDb
 
+// if you accidentally deleated the database, run: npx tsx SeedData/seed
 
