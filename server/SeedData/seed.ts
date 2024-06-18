@@ -1,12 +1,12 @@
 // seed.js
 
 
-import { connectionString, dbName } from '../config.ts';
+import { connectionString, dbName } from '../config';
 import mongoose from 'mongoose';
-import Business from '../models/business.ts';
-import Categories from '../models/category.ts';
-import {seedData} from './seedBusinesses.ts';
-import {seedCategories} from './seedCategories.ts';
+import Business from '../models/business';
+import Categories from '../models/category';
+import {seedData} from './seedBusinesses';
+import {seedCategories} from './seedCategories';
 
 
 //FIXME: do we need to remove the console logs here -> if its only use for dev?
