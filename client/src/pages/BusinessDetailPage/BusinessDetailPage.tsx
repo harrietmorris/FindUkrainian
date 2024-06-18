@@ -20,15 +20,18 @@ export default function BusinessDetailPage() {
 
   return (
     <>
+    <div data-testid="backButton">
       <Button
         className="detail-btn"
         component={Link}
         to={"/"}
         variant="contained"
+        role="button"
         startIcon={<ArrowBackIcon />}
       >
         Back to map
       </Button>
+      </div>
 
       <BusinessDetail business={business} />
     </>
