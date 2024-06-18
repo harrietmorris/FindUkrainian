@@ -7,7 +7,7 @@ import './style.css';
 
 export default function Home() {
   return (
-    <div id="home" className="home">
+    <div id="home" className="home" data-testid="home-element">
       <Categories />
       <section className="home__info">
         <BusinessList />
