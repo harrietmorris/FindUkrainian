@@ -47,8 +47,9 @@ To run the _server_ and seed it with mocked data:
 from the root directory:
 
 cd server
-npm run seed
+npx tsx SeedData/seed
 node run index.js
+
 
 ```
 
