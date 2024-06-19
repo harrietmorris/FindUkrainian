@@ -9,6 +9,7 @@ import BusinessDetailPage from "./pages/BusinessDetailPage/BusinessDetailPage";
 import PageNotFound from "./pages/PageNotFound/PageNotFound";
 import Footer from "./components/Footer/Footer";
 import "./App.css";
+import Login from "./components/Login/Login";
 
 function App() {
   const [error, setError] = useState<string | null>(null);
@@ -25,6 +26,7 @@ function App() {
               <h1 className="title">Find 🇺🇦 services in Köln 🇩🇪</h1>
               <Routes>
                 <Route path={"/"} element={<Home />} />
+                <Route path={"/login"} element={<Login />} />
                 <Route path={"/id/:id"} element={<BusinessDetailPage />} />
                 <Route path="*" element={<PageNotFound />} />
               </Routes>
