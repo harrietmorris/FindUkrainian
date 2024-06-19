@@ -11,9 +11,10 @@ const resources = {
     en: { translation: en },
     de: { translation: de },
     uk: { translation: uk },
+    // enCat: {name: cat.name.en},
+    // ukCat: {name: cat.name.uk}
   };
 
-  
 i18n
   .use(Backend)
   .use(HttpApi)
@@ -34,6 +35,6 @@ i18n
       order: ['queryString', 'cookie'],
       caches: ['cookie'],
     },
-  });
+  }); 
 
 export default i18n;
