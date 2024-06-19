@@ -10,6 +10,8 @@ export interface BusinessContextProp {
   setBusinessId: React.Dispatch<React.SetStateAction<string | undefined>>;
   categories: CategoryType[];
   setCategories: React.Dispatch<React.SetStateAction<CategoryType[]>>;
+  isAuthenticated: boolean;
+  setIsAuthenticated: React.Dispatch<React.SetStateAction<boolean>>;
   fetchBusinesses?: () => Promise<void>;
   fetchCategories?: () => Promise<void>;
 }

@@ -1,22 +1,27 @@
-import { useState , useEffect, createContext, useContext } from "react";
+import { useState, useEffect, createContext, useContext } from "react";
 import React from "react";
 import {
   getBusinesses,
   getCategories,
   getBusinessesByID,
 } from "../services/businessService";
+import auth from "../utils/auth";
 import { BusinessType } from "../Types/BusinessType.ts";
 import { CategoryType } from "../Types/CategoryType.ts";
 import { BusinessContextProp } from "../Types/BusinessContextProp.ts";
 
+export const BusinessContext = createContext<BusinessContextProp | null>(null);
 
-export const BusinessContext = createContext<BusinessContextProp | null > (null);
-
-export const BusinessProvider: React.FC<{ children: React.ReactNode }> = ({children}) => {
+export const BusinessProvider: React.FC<{ children: React.ReactNode }> = ({
+  children,
+}) => {
   const [businesses, setBusinesses] = useState<BusinessType[]>([]);
   const [filteredBusinesses, setFilteredBusinesses] = useState<BusinessType[]>([]);
   const [businessId, setBusinessId] = useState<string | undefined>();
   const [categories, setCategories] = useState<CategoryType[]>([]);
+
+  const initialState = auth.isAuthenticated();
+  const [isAuthenticated, setIsAuthenticated] = useState<boolean>(initialState);
 
   const fetchBusinesses = async () => {
     try {
@@ -63,6 +68,8 @@ export const BusinessProvider: React.FC<{ children: React.ReactNode }> = ({child
         setBusinessId,
         categories,
         setCategories,
+        isAuthenticated,
+        setIsAuthenticated
       }}
     >
       {children}
