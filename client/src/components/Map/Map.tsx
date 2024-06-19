@@ -2,7 +2,7 @@ import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import './style.css';
 import { useEffect, useRef } from 'react';
-import { useBusinessContext} from "../../context/BusinessContext";
+import { useBusinessContext } from "../../context/BusinessContext";
 import { Icon, Marker as LeafletMarker } from 'leaflet';
 import LocateControl from '../LocateControl/LocateControl';
 import isOpenNow from '../../utils/isOpen';
@@ -13,14 +13,14 @@ import { Link } from 'react-router-dom';
 
 
 export default function Map() {
-  const businessContext =  useBusinessContext();
+  const businessContext = useBusinessContext();
 
   if (!businessContext) {
     return null
   }
   const { filteredBusinesses, businessId } = businessContext;
 
-  const markerRefs = useRef<{[key: string]: LeafletMarker | null}>({}); //store refs to markers in DOM here, to open their popups programmatically
+  const markerRefs = useRef<{ [key: string]: LeafletMarker | null }>({}); //store refs to markers in DOM here, to open their popups programmatically
 
   useEffect(() => {
     businessId && markerRefs.current[businessId]?.openPopup();
@@ -58,34 +58,38 @@ export default function Map() {
       {filteredBusinesses.map((b) => {
         const isOpen = isOpenNow(b.openingHours);
         return (
-          <Marker
-            key={b._id}
-            position={[b.coordinates.lat, b.coordinates.lng]}
-            icon={customIcon}
-            ref={(markerDomEL) => (markerRefs.current[b._id] = markerDomEL)}
-          >
-            <Popup className="popup">
-              <div>
-                <img className="popup__img" src={b.images[0]} alt={b.name} />
-                <h4>{b.name}</h4>
-                <span>{b.category}</span>
-                <p className={isOpen ? "open" : "closed"}>
-                  {isOpen ? "Open now" : "Closed now"}
-                </p>
-                <p>{b.contactInfo}</p>
-                <p>{b.address}</p>
-              </div>
-              <Button
-                className="popup__btn"
-                component={Link}
-                to={"/id/" + b._id}
-                variant="contained"
-                endIcon={<ArrowOutwardIcon />}
-              >
-                Details
-              </Button>
-            </Popup>
-          </Marker>
+          <div data-testid={b.name}>
+
+
+            <Marker
+              key={b._id}
+              position={[b.coordinates.lat, b.coordinates.lng]}
+              icon={customIcon}
+              ref={(markerDomEL) => (markerRefs.current[b._id] = markerDomEL)}
+            >
+              <Popup className="popup">
+                <div>
+                  <img className="popup__img" src={b.images[0]} alt={b.name} />
+                  <h4>{b.name}</h4>
+                  <span>{b.category}</span>
+                  <p className={isOpen ? "open" : "closed"}>
+                    {isOpen ? "Open now" : "Closed now"}
+                  </p>
+                  <p>{b.contactInfo}</p>
+                  <p>{b.address}</p>
+                </div>
+                <Button
+                  className="popup__btn"
+                  component={Link}
+                  to={"/id/" + b._id}
+                  variant="contained"
+                  endIcon={<ArrowOutwardIcon />}
+                >
+                  Details
+                </Button>
+              </Popup>
+            </Marker>
+          </div>
         );
       })}
       <LocateControl />

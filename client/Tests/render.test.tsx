@@ -1,12 +1,33 @@
-import { render, fireEvent, queryByPlaceholderText, screen } from '@testing-library/react'
-// import React from 'react'
-// import Search from '../src/components/Search/Search'
+import { render,screen,fireEvent } from '@testing-library/react'
 import '@testing-library/jest-dom'
 import App from '../src/App'
 import { expect, describe, it } from 'vitest'
 import { BrowserRouter } from 'react-router-dom'
 import Map from '../src/components/Map/Map'
-import { MapContainer } from 'react-leaflet'
+import mockContext from './Mocks/mockContext'
+import { BusinessContext } from '../src/context/BusinessContext'
+
+const renderWithContext = (component: any, contextValue: any) => {
+    return render(
+        <BusinessContext.Provider value={contextValue}>
+            {component}
+        </BusinessContext.Provider>
+    )
+}
+
+describe('Detail button', () => {
+    it('Detail button displays proplerly', async () => {
+        renderWithContext(<Map />, mockContext);
+
+        const icon =await screen.getByTestId('Kyiv Food Market')
+        fireEvent.click(icon)
+
+        expect(
+          await  screen.findByRole("button", { name: "Details" })
+        ).toBeInTheDocument();
+
+    })
+})
 
 
 describe('title is rendering', () => {
@@ -15,22 +36,6 @@ describe('title is rendering', () => {
         expect(screen.getByText(/Find 🇺🇦 services in Köln 🇩🇪/i)).toBeInTheDocument()
         // screen.debug();
     })
-
-    // it('should render the map', async () => {
-    //     const { container } = render(<Map />);
-    //     const mapContainer = container.querySelector('.leaflet-container');
-    //     expect(await mapContainer).toBeInTheDocument();
-
-    // });
-
-    it('check detail button', async () => {
-        render(<Map />);
-        
-        expect(
-            await screen.findByRole("button",{name:"Details"})
-        ).toBeInTheDocument();
-
-    });
 
 })
 
