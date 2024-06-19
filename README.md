@@ -48,7 +48,7 @@ from the root directory:
 
 cd server
 npx tsx SeedData/seed
-node run index.js
+npx tsx index.js
 
 
 ```
