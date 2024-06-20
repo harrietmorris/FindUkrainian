@@ -9,20 +9,31 @@ import BusinessDetailPage from "./pages/BusinessDetailPage/BusinessDetailPage";
 import PageNotFound from "./pages/PageNotFound/PageNotFound";
 import Footer from "./components/Footer/Footer";
 import "./App.css";
+import { useTranslation } from 'react-i18next'
+import LanguageSwap from "./i18next/languageswap";
+
+
 
 function App() {
   const [error, setError] = useState<string | null>(null);
+  const { t } = useTranslation();
+
 
   return (
     <ThemeProvider theme={theme}>
       <Container maxWidth="lg">
+      
         <BusinessProvider>
           {error ? (
             <div>Oops! Something went wrong. Please try again later.</div>
           ) : (
             <div className="app">
+              < LanguageSwap />
               <Header />
-              <h1 className="title">Find 🇺🇦 services in Köln 🇩🇪</h1>
+              <div> 
+              <h1 className="title">{t('welcome')}</h1>
+             
+              </div>
               <Routes>
                 <Route path={"/"} element={<Home />} />
                 <Route path={"/id/:id"} element={<BusinessDetailPage />} />

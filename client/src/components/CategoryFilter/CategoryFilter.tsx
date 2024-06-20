@@ -3,10 +3,11 @@ import { useBusinessContext} from "../../context/BusinessContext";
 import { Button } from '@mui/material';
 import './style.css';
 import { ALL } from '../../constants/categoriesConstants';
+import { useTranslation } from 'react-i18next'
 
 
 export default function CategoryFilter() {
-
+  const { t } = useTranslation();
   const businessContext =  useBusinessContext();
 
   if (!businessContext) {
@@ -40,3 +41,4 @@ export default function CategoryFilter() {
     </div>
   );
 }
+
