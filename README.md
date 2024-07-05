@@ -67,3 +67,5 @@ from the root directory:
 cd client
 npm run dev
 ```
+### Contributors:
+[Regina Czech](https://github.com/reginaczech), [Harriet Morris](https://github.com/harrietmorris), [Badreddine El Rhoul](https://github.com/Badrhoul)
