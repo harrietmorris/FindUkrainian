@@ -3,7 +3,6 @@
 import { BusinessType } from "../Types/BusinessType";
 import { CategoryType } from "../Types/CategoryType";
 
-// import { baseUrl } from "../../config";
 const baseUrl: string = 'http://localhost:3000'
 
 export const getBusinesses = (): Promise<BusinessType[]> => getAtEndpoint('businesses');

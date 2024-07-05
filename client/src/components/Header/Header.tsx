@@ -20,7 +20,7 @@ export default function Header() {
           <Search />
         </div>
 
-        {/* FIXME: this works funny and sometimes doesnt load. To see return to original btn, comment out 'iframe' rule in style.css */}
+        {/* FIXME: functions inconsistently. To see return to original btn, comment out 'iframe' rule in style.css */}
         <div id="google_translate_element" className="language"></div>
 
         <IconButton>
