@@ -1,26 +1,32 @@
-# FindUkrainian
+# FindUkrainian Legacy
 
-An SPA to locate Ukrainian businesses in Koln, Germany
+The original owner of this project is Tatyana Bortnik. [https://github.com/tatyanabortnik/FindUkrainian](https://github.com/tatyanabortnik/FindUkrainian)
+Our goal of this project was to convert it into typescript along with adding testing and improvements at our discretion.
 
-## Room for improvement:
+## Accomplishments:
 
-1. Kind of fixed Google translate widget. The solution is not perfect, and there is no back to original language button.
-1. ~~I used this as a quick fix for a translation feature while having troubles with various translation APIs, hid the ugly parts that googleTranslateElement adds to the page with css, put the script loading in a separate js file, and bound the translate func to the button in the Header.jsx. But it stopped working! https://www.w3schools.com/howto/howto_google_translate.asp~~
-1. BusinessDetail Page could use a carousel with images (db has an array of image urls)
-1. No media query for mobile yet
-1. Reviews and user btn are fake)) Reviews issue can be solved by creating a separate collection in the db for users and reviews, and relate them with ids.
-1. User auth would be nice to implement
+1. Successfully converted both server and client folders to typescript along with providing necessary type declarations for seed data.
+1. Implemented mock data for end to end testing with cypress
+1. Added feature to translate title of the page (Full page language translation in development). 
 
 ### Prerequisites:
 
 You will need Express server and MongoDB to run this project.
 
-Server port can be specified in the `server/index.js` file, defaults to 3000. If your server doesn't run on port 3000, you need to specify it in `client/src/services/businessService.js` file.
+Server port can be specified in the `server/index.ts` file, defaults to 3000. If your server doesn't run on port 3000, you need to specify it in `client/src/services/businessService.ts` file.
 
-MongoDB connection string is to be specified in `server/models/index.js` file.
+MongoDB connection string is to be specified in `server/config.ts` file.
 
 Install all dependencies. Server and client are two separate projects that need their respective packages to be installed via npm
 
+Dependencies for _translation feature_:
+
+```
+from the root directory:
+
+npm i
+
+```
 Dependencies for _server_:
 
 ```
