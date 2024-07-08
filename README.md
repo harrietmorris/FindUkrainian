@@ -1,26 +1,56 @@
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+  <a href="https://github.com/tatyanabortnik/FindUkrainian">
+    <img src="client/public/logo.png" alt="Logo" height="80">
+  </a>
+</div>
+
+## About The Project
+
+FindUkrainian is an SPA to locate Ukrainian businesses in Koln, Germany
+
+![FindUkrainian Screen Shot][product-gif]
+
+### Built With
+
+[![React][React]][React_URL]
+[![React_Router][React_Router]][React_Router_URL]
+[![MongoDB][MongoDB]][MongoDB_URL]
+[![Expressjs][Expressjs]][Expressjs_URL]
+[![MUI][MUI]][MUI_URL]
+[![Figma][Figma]][Figma_URL]
+[![Prettier][Prettier]](https://prettier.io/)
+
 # FindUkrainian
 
-An SPA to locate Ukrainian businesses in Koln, Germany
+The original owner of this repository is Tatyana Bortnik [https://github.com/tatyanabortnik/FindUkrainian](https://github.com/tatyanabortnik/FindUkrainian).
+Our goal was to refactor the code and convert in into TypeScript, along with adding maxmimum possible test coverage .
 
-## Room for improvement:
+## Accomplishments:
 
-1. Kind of fixed Google translate widget. The solution is not perfect, and there is no back to original language button.
-1. ~~I used this as a quick fix for a translation feature while having troubles with various translation APIs, hid the ugly parts that googleTranslateElement adds to the page with css, put the script loading in a separate js file, and bound the translate func to the button in the Header.jsx. But it stopped working! https://www.w3schools.com/howto/howto_google_translate.asp~~
-1. BusinessDetail Page could use a carousel with images (db has an array of image urls)
-1. No media query for mobile yet
-1. Reviews and user btn are fake)) Reviews issue can be solved by creating a separate collection in the db for users and reviews, and relate them with ids.
-1. User auth would be nice to implement
+1. Successfully refactored and converted both server and client folders to TypeScript along with providing necessary type declarations for seed data.
+2. Implement front-end testing (using Vitest, React Testing Library) and back-end testing (using Jest, SuperTest).
+3. Implemented end-to-end testing using Cypress.
+4. Added feature to translate title of the page (Full page language translation in development).
 
 ### Prerequisites:
 
 You will need Express server and MongoDB to run this project.
 
-Server port can be specified in the `server/index.js` file, defaults to 3000. If your server doesn't run on port 3000, you need to specify it in `client/src/services/businessService.js` file.
+Server port can be specified in the `server/index.ts` file, defaults to 3000. If your server doesn't run on port 3000, you need to specify it in `client/src/services/businessService.ts` file.
 
-MongoDB connection string is to be specified in `server/models/index.js` file.
+MongoDB connection string is to be specified in `server/config.ts` file.
 
 Install all dependencies. Server and client are two separate projects that need their respective packages to be installed via npm
 
+Dependencies for _translation feature_:
+
+```
+from the root directory:
+
+npm i
+```
 Dependencies for _server_:
 
 ```
@@ -39,17 +69,16 @@ cd client
 npm i
 ```
 
-### run commands:
+### Run Commands:
 
-To run the _server_ and seed it with mocked data:
+To run the _server_ and seed it with seeded data:
 
 ```
 from the root directory:
 
 cd server
-npm run seed
-node run index.js
-
+npx tsx SeedData/seed
+npx tsx index.ts
 ```
 
 To run the _client_:
@@ -60,3 +89,61 @@ from the root directory:
 cd client
 npm run dev
 ```
+
+### Testing Commands:
+Run the server and client as specified in the *Run Commands*.
+
+To run Cypress E2E Testing in the terminal:
+```
+from the root directory:
+
+cd client
+npx cypress run
+```
+
+To run Cypress e2E Testing in Cypress Experimental Studio:
+```
+from the root directory:
+
+cd client
+npx cypress open
+```
+
+To run Vitest Testing in the client:
+```
+from the root directory:
+
+cd client
+npm test
+```
+
+To run Jest Testing in the server (ensure server is seeded with seed data):
+```
+from the root directory:
+
+cd server
+npm test
+```
+
+
+### Contributors:
+[Regina Czech](https://github.com/reginaczech), [Harriet Morris](https://github.com/harrietmorris), [Badreddine El Rhoul](https://github.com/Badrhoul)
+
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+
+[product-gif]: client/public/FindUkranian.gif
+[Prettier]: https://img.shields.io/badge/prettier-1A2C34?style=for-the-badge&logo=prettier&logoColor=F7BA3E
+[MongoDB]: https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white
+[MongoDB_URL]: https://www.mongodb.com/docs/
+[React]: https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB
+[React_URL]: https://react.dev/
+[React_Router]: https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white
+[React_Router_URL]: https://www.npmjs.com/package/react-router-dom
+[Expressjs]: https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB
+[Expressjs_URL]: https://expressjs.com/
+[MUI]: https://img.shields.io/badge/MUI-%230081CB.svg?style=for-the-badge&logo=mui&logoColor=white
+[MUI_URL]: https://mui.com/
+[Figma]: https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white
+[Figma_URL]: https://www.figma.com/

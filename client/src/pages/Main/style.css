@@ -1,9 +1,0 @@
-.title {
-  padding: 0.5em 0 !important;
-}
-
-.main__info {
-  display: flex;
-  gap: 1em;
-  height: 58vh; /* ??? */
-}

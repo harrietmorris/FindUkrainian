@@ -2,16 +2,36 @@
   "name": "server",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "index.ts",
+  "type": "module",
   "scripts": {
-    "seed": "node models/seed.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "seed": "node SeedData/seed.ts",
+    "test": "jest"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@types/mongoose": "^5.11.97",
+    "@types/node": "^20.14.2",
     "cors": "^2.8.5",
+    "cross-env": "^7.0.3",
+    "dotenv": "^16.4.5",
     "express": "^4.19.2",
-    "mongoose": "^8.4.1"
+    "mongoose": "^8.4.1",
+    "supertest": "^7.0.0"
+  },
+  "devDependencies": {
+    "@shelf/jest-mongodb": "^4.3.2",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/jest": "^29.5.12",
+    "@types/mongoose": "^5.11.97",
+    "@types/node": "^20.14.2",
+    "@types/supertest": "^6.0.2",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.1.5",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.15.6",
+    "typescript": "^5.4.5"
   }
 }
