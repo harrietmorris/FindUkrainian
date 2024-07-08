@@ -30,7 +30,7 @@ Our goal was to refactor the code and convert in into TypeScript, along with add
 ## Accomplishments:
 
 1. Successfully refactored and converted both server and client folders to TypeScript along with providing necessary type declarations for seed data.
-2. Utilized mock data to implement front-end testing (using Jest, React Testing Library) and back-end testing (using SuperTest).
+2. Implement front-end testing (using Vitest, React Testing Library) and back-end testing (using Jest, SuperTest).
 3. Implemented end-to-end testing using Cypress.
 4. Added feature to translate title of the page (Full page language translation in development).
 
@@ -71,7 +71,7 @@ npm i
 
 ### Run Commands:
 
-To run the _server_ and seed it with mocked data:
+To run the _server_ and seed it with seeded data:
 
 ```
 from the root directory:
@@ -108,6 +108,23 @@ from the root directory:
 cd client
 npx cypress open
 ```
+
+To run Vitest Testing in the client:
+```
+from the root directory:
+
+cd client
+npm test
+```
+
+To run Jest Testing in the server (ensure server is seeded with seed data):
+```
+from the root directory:
+
+cd server
+npm test
+```
+
 
 ### Contributors:
 [Regina Czech](https://github.com/reginaczech), [Harriet Morris](https://github.com/harrietmorris), [Badreddine El Rhoul](https://github.com/Badrhoul)
