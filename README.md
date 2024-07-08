@@ -10,7 +10,7 @@
 
 FindUkrainian is an SPA to locate Ukrainian businesses in Koln, Germany
 
-![FindUkrainian Screen Shot][product-screenshot]
+![FindUkrainian Screen Shot][product-gif]
 
 ### Built With
 
@@ -22,7 +22,7 @@ FindUkrainian is an SPA to locate Ukrainian businesses in Koln, Germany
 [![Figma][Figma]][Figma_URL]
 [![Prettier][Prettier]](https://prettier.io/)
 
-# FindUkrainian Legacy
+# FindUkrainian
 
 The original owner of this repository is Tatyana Bortnik [https://github.com/tatyanabortnik/FindUkrainian](https://github.com/tatyanabortnik/FindUkrainian).
 Our goal was to refactor the code and convert in into TypeScript, along with adding maxmimum possible test coverage .
@@ -32,7 +32,7 @@ Our goal was to refactor the code and convert in into TypeScript, along with add
 1. Successfully refactored and converted both server and client folders to TypeScript along with providing necessary type declarations for seed data.
 2. Utilized mock data to implement front-end testing (using Jest, React Testing Library) and back-end testing (using SuperTest).
 3. Implemented end-to-end testing using Cypress.
-4. Added feature to translate title of the page (Full page language translation in development). 
+4. Added feature to translate title of the page (Full page language translation in development).
 
 ### Prerequisites:
 
@@ -69,7 +69,7 @@ cd client
 npm i
 ```
 
-### run commands:
+### Run Commands:
 
 To run the _server_ and seed it with mocked data:
 
@@ -89,6 +89,26 @@ from the root directory:
 cd client
 npm run dev
 ```
+
+### Testing Commands:
+Run the server and client as specified in the *Run Commands*.
+
+To run Cypress E2E Testing in the terminal:
+```
+from the root directory:
+
+cd client
+npx cypress run
+```
+
+To run Cypress e2E Testing in Cypress Experimental Studio:
+```
+from the root directory:
+
+cd client
+npx cypress open
+```
+
 ### Contributors:
 [Regina Czech](https://github.com/reginaczech), [Harriet Morris](https://github.com/harrietmorris), [Badreddine El Rhoul](https://github.com/Badrhoul)
 
@@ -96,7 +116,7 @@ npm run dev
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
-[product-screenshot]: client/public/image-1.png
+[product-gif]: client/public/FindUkranian.gif
 [Prettier]: https://img.shields.io/badge/prettier-1A2C34?style=for-the-badge&logo=prettier&logoColor=F7BA3E
 [MongoDB]: https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white
 [MongoDB_URL]: https://www.mongodb.com/docs/
