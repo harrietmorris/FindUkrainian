@@ -1,40 +1,34 @@
 import mongoose from "mongoose";
 import request from "supertest";
 import app from "../index";
-import mockData from "./MockData/mockBusiness";
-import mockBusinessDb from "./MockData/mockFunctions";
-import { connectionString } from "../config";
-import Mock from "./MockData/mockSchema";
+import seedData from "../SeedData/seedBusinesses";
+import { connectDB } from "../models";
 
 describe("get all businesses", () => {
   afterEach(async () => {
     await mongoose.connection.close();
-    console.log("connection closed");
   });
 
   it("should get all businesses", async () => {
     const res = await request(app).get("/businesses").send();
     expect(res.status).toEqual(200);
-    expect(res.body.length).toBe(mockData.length);
+    expect(res.body.length).toBe(seedData.length);
   });
 });
 
 describe("get business by ID", () => {
-  beforeAll(async () => {
-    await mockBusinessDb();
-    await mongoose.connect(`${connectionString}/${Mock}`);
-  });
   afterEach(async () => {
     await mongoose.connection.close();
-    console.log("connection closed");
   });
 
   it("should get a business from the ID", async () => {
-    const res = await request(app)
-      .get("/businesses/66707d7706ee78a45cc76a04")
-      .send();
-    console.log("res.body", res.body);
+    await connectDB();
+    const allBusinesses = await request(app).get("/businesses").send();
+    const business = allBusinesses.body[0];
+    const businessId = business._id;
+
+    const res = await request(app).get(`/businesses/${businessId}`).send();
     expect(res.statusCode).toEqual(200);
-    expect(res.body._id).toEqual("66707d7706ee78a45cc76a04");
+    expect(res.body._id).toEqual(`${businessId}`);
   });
 });
