@@ -18,11 +18,11 @@ export default function Map() {
   }
   const { filteredBusinesses, businessId } = businessContext;
 
-  const markerRefs = useRef<{ [key: string]: LeafletMarker | null }>({}); //store refs to markers in DOM here, to open their popups programmatically
+  const markerRefs = useRef<{ [key: string]: LeafletMarker | null }>({});
 
   useEffect(() => {
     businessId && markerRefs.current[businessId]?.openPopup();
-  }, [businessId]); //open a popup of a corresponding marker when a businessId from BusinessList component updates
+  }, [businessId]);
 
   const customIcon = new Icon({
     iconUrl:
@@ -46,7 +46,7 @@ export default function Map() {
       zoom={13}
       scrollWheelZoom={true}
       maxBounds={cologneBounds}
-      maxBoundsViscosity={1.0} // Prevent panning outside the bounds
+      maxBoundsViscosity={1.0}
     >
       <TileLayer
         attribution="&copy; Google Maps"

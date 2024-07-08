@@ -15,7 +15,6 @@ describe.only("navigation header", () => {
       expect(screen.getByAltText(/logo/i)).toBeInTheDocument();
     });
 
-    //should probably move this to the app.test -> routing tests
     it("logo click should navigate to home page", () => {
       const user = userEvent.setup();
       render(<App />, { wrapper: BrowserRouter });

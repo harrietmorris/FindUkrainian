@@ -1,4 +1,3 @@
-// const router = require('express').Router();
 import Router from 'express'
 import {getAllMiddleware, getByIdMiddleware} from './controller';
 import Business from "./models/business";

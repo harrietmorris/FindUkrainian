@@ -14,7 +14,6 @@ export default function BusinessDetailPage() {
   if (!id) return undefined;
   const { businesses } = businessContext;
 
-  //FIXME: review and verify - getBusinessByID
   const business = businesses.find((el) => el._id === id);
   if (!business) return null;
 

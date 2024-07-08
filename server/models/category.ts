@@ -1,4 +1,3 @@
-// const mongoose = require('mongoose');
 import { model, Schema } from 'mongoose';
 import { ICategoryType } from '../Types/Types';
 
