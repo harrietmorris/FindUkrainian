@@ -11,8 +11,6 @@ const resources = {
     en: { translation: en },
     de: { translation: de },
     uk: { translation: uk },
-    // enCat: {name: cat.name.en},
-    // ukCat: {name: cat.name.uk}
   };
 
 i18n
@@ -26,15 +24,12 @@ i18n
     debug: true,
     supportedLngs: ['en', 'uk', 'de'],
     interpolation: {
-      escapeValue: false, // React already does escaping
+      escapeValue: false,
     },
-    // backend: {
-    //   loadPath: `public/languages/{{lng}}/translation.ts`,
-    // },
     detection: {
       order: ['queryString', 'cookie'],
       caches: ['cookie'],
     },
-  }); 
+  });
 
 export default i18n;

@@ -1,5 +1,3 @@
-// import {baseUrl} from '../config.js'; //TODO: move to a config file / process.env
-
 import { BusinessType } from "../Types/BusinessType";
 import { CategoryType } from "../Types/CategoryType";
 
@@ -30,4 +28,3 @@ export const getBusinessesByID = async (ID: string): Promise<string | undefined>
     console.error(`Failed to fetch category: ${error}`);
   };
 };
-

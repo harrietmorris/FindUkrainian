@@ -37,19 +37,9 @@ export const BusinessProvider: React.FC<{ children: React.ReactNode }> = ({child
     }
   };
 
-  // const fetchBusinessesByID = async () => {
-  //   try {
-  //     const data = await getBusinessesByID(id);
-  //     setBusinessId(data);
-  //   } catch (e) {
-  //     console.log("fetchBusinessesById error:", e);
-  //   }
-  // };
-
   useEffect(() => {
     fetchBusinesses();
     fetchCategories();
-    // fetchBusinessesByID();
   }, []);
 
   return (
@@ -77,4 +67,3 @@ export const useBusinessContext = () => {
   }
   return businessContext;
 };
-
