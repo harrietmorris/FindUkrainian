@@ -6,7 +6,7 @@
   </a>
 </div>
 
-## About The Project
+## About
 
 FindUkrainian is an SPA to locate Ukrainian businesses in Koln, Germany
 
